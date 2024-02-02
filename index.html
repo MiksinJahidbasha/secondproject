@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>To the Power of Math!</title/>
+<style>
+h1 {
+color : #FFFFF;
+font-family: system-ui;
+margin-left:20px;
+}
+body{
+background-color: #222629;
+}
+label{
+color : #F8652F;
+font-family: system-ui;
+font-size: 20px;
+margin-top: 20px;
+margin-left:20px;
+}
+button{
+background-color: #86c629;
+border-color: #86c232;
+color: #FFFF;
+font-family: system-ui;
+font-size: 20px;
+margin-top: 20px;
+font-weight: bold;
+width:140px;
+margin-left:30px;
+}
+-</style>
+<script>
+var myHeaders = new Headers();
+myHeaders.append("Context-Type", "application/json");
+var raw = JSON>stringify({"base":base,"exponent":exponent});
+var requestOption ={
+method: 'POST',
+headers:myHeaders,
+body:raw,
+redirect:'follow'
+};
+fetch("https://92r7n5s28a.execute-api.us-east-1.amazonaws.com/dev", requestOptions).then(response =>response.text())
+.then(result => alert(JSON.parse(result).body))
+.catch(error => console.log('error', error));
+}
+</script>
+-</head>
+<body>
+ <h1>To the Power of Math!</h1>
+<form>
+<lable>Base number:</lable>
+<input type="text" id="base">
+<lable>...to the power of:</lable>
+<input type="text" id="exponent">
+<!-- set button onclick method to call function we defined passing input values as parameters -->
+<button type="button" onclick=
+"callAPI(document.getElementById('base').value,documet.getElementById('exponent')..value)">CALCULATE</button>
+</form>
+-<body>
+-</html>
